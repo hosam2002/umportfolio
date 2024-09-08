@@ -7,7 +7,7 @@ const successPage = require(`./controllers/successPage`)
 // server
 
 const app = express()
-const port = 5500
+const port = 5500 || process.env.PORT
 
 // in-built middleware
 
