@@ -419,16 +419,13 @@ footer {
   background-color: transparent;
   color: #0F172A;
 }
-.home__content--description > span {
+.home__content--description > span:first-child, .home__content--description > span:nth-child(2) {
   background-color: rgb(254, 243, 199);
   line-height: 1.7;
   font-weight: 400;
 }
-.home__content--description > span:last-child {
-  padding-right: 1rem;
-  background-color: transparent;
-  text-decoration: none;
-  transition: all 0.4s;
+.home__content--description > span:nth-child(3) {
+  text-decoration: underline;
 }
 
 .technologies {
@@ -533,13 +530,32 @@ footer {
   }
 }
 .services__card {
+  position: relative;
   width: 33rem;
   height: 50rem;
   background-color: #FFFFFF;
   border-radius: 10px;
   border: 1px solid #FFE4E6;
-  overflow: hidden;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+.services__card::after, .services__card::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  position: absolute;
+}
+.services__card:first-child::after, .services__card:last-child::after {
+  top: 1rem;
+  right: 1rem;
+  z-index: -50;
+  background-color: rgb(255, 251, 235);
+}
+.services__card:first-child::before, .services__card:last-child::before {
+  bottom: 1rem;
+  left: 1rem;
+  z-index: -50;
+  background-color: #FFF1F2;
 }
 .services__img, .services__title, .services__related {
   width: 100%;
@@ -548,6 +564,7 @@ footer {
   height: 17rem;
   background-color: #F3F4F6;
   overflow: hidden;
+  border-radius: 10px 10px 0 0;
 }
 .services__img > img {
   width: 100%;
@@ -895,13 +912,22 @@ footer {
   font-weight: 700;
   color: #334155;
 }
+.project__brand--stat {
+  width: max-content;
+  padding: 0.5rem 0.85rem;
+  margin-left: 1rem;
+  border-radius: 5px;
+  background-color: rgb(236, 252, 203);
+  color: rgb(77, 124, 15);
+  font-size: 1.4rem;
+  font-weight: 400;
+  transform: skewX(-10deg);
+}
 .project__desc {
   width: 85%;
   margin-top: 2.5rem;
   background-color: transparent;
-  font-size: 2rem;
   font-family: "Maven Pro";
-  color: #334155;
   line-height: 1.5;
 }
 @media (max-width: 61.25em) {
@@ -914,11 +940,25 @@ footer {
     font-size: 1.8rem;
   }
 }
-.project__desc span:first-child {
-  text-decoration: underline;
+.project__desc--title {
+  margin-bottom: 1.5rem;
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: #334155;
+}
+.project__desc--body {
+  font-size: 1.6rem;
+}
+.project__desc--body span:first-child {
+  color: #3B82F6;
   font-weight: 500;
 }
-.project__desc span:nth-child(2) {
+.project__desc--body span:nth-child(3) {
+  color: rgb(245, 158, 11);
+  font-weight: 500;
+}
+.project__desc--body span:nth-child(2), .project__desc--body span:last-child {
+  color: #EC4899;
   font-weight: 500;
 }
 .project__footer {
@@ -1166,7 +1206,7 @@ footer {
   position: absolute;
 }
 .success__content::after {
-  background-color: #F0FDF4;
+  background-color: rgba(240, 253, 244, 0.75);
   top: 2.5rem;
   right: 2.5rem;
   z-index: -50;
@@ -1178,7 +1218,7 @@ footer {
   }
 }
 .success__content::before {
-  background-color: #DCFCE7;
+  background-color: #BBF7D0;
   bottom: 2.5rem;
   left: 2.5rem;
   z-index: -50;
@@ -1193,7 +1233,7 @@ footer {
 }
 .success__header > div:first-child {
   font-size: 12rem;
-  color: #4ADE80;
+  color: #BBF7D0;
 }
 .success__header > div:first-child > i {
   display: flex;

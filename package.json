@@ -4,8 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js",
-    "build": "node app.js"
+    "dev": "nodemon app.js"
   },
   "author": "hosamumbaddi",
   "license": "ISC",
