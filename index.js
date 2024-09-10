@@ -1,8 +1,8 @@
 const express = require(`express`)
-const homePage = require(`../controllers/homePage`)
-const pageNotFound = require(`../controllers/pageNotFound`)
-const sendMessage = require(`../controllers/sendMessage`)
-const successPage = require(`../controllers/successPage`)
+const homePage = require(`./controllers/homePage`)
+const pageNotFound = require(`./controllers/pageNotFound`)
+const sendMessage = require(`./controllers/sendMessage`)
+const successPage = require(`./controllers/successPage`)
 
 // server
 
